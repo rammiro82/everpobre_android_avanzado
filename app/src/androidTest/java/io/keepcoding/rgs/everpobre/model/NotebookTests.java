@@ -1,4 +1,4 @@
-package io.keepcoding.everpobre.rgs;
+package io.keepcoding.rgs.everpobre.model;
 
 import android.test.AndroidTestCase;
 
