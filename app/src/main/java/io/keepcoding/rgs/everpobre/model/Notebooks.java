@@ -10,6 +10,7 @@ public class Notebooks {
 
     List<Notebook> notebooks;
 
+    // factory static method
     public static Notebooks createNotebooks(List<Notebook> notebooks) {
         Notebooks myNotebooks = new Notebooks();
 
@@ -21,14 +22,25 @@ public class Notebooks {
     }
 
     private Notebooks() {
-
     }
 
-    public void add(Notebook n) {
-        getNotebooks().add(n);
+    public int size() {
+        return getNotebooks().size();
     }
 
-    public  List<Notebook> getNotebooks() {
+    public Notebook get(int index) {
+        return getNotebooks().get(index);
+    }
+
+    public void remove(Notebook notebook) {
+        getNotebooks().remove(notebook);
+    }
+
+    public void add(Notebook notebook) {
+        getNotebooks().add(notebook);
+    }
+
+    public List<Notebook> getNotebooks() {
         if (this.notebooks == null) {
             this.notebooks = new LinkedList<>();
         }
