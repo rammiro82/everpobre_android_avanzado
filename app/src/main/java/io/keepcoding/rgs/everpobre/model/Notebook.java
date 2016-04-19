@@ -6,7 +6,7 @@ package io.keepcoding.rgs.everpobre.model;
 public class Notebook {
 
     public static final String DEFAULT_NAME = "John Doe";
-    private int id;
+    private long id;
     private String name;
 
     private Notebook() {
@@ -23,11 +23,11 @@ public class Notebook {
         this.id = id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
