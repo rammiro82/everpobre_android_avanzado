@@ -57,17 +57,14 @@ public class DBHelper extends SQLiteOpenHelper {
 		case 1:
 		// upgrades for version 1->2
 			Log.i("DBHelper", "Migrating from V1 to V2");
-			/*
-			db.execSQL("alter table " + NoteDAO.TABLE_NOTE + " ADD COLUMN " + NoteDAO.KEY_NOTE_LATITUDE + " real;");
-			db.execSQL("alter table " + NoteDAO.TABLE_NOTE + " ADD COLUMN " + NoteDAO.KEY_NOTE_LONGITUDE + " real;");
-			db.execSQL("alter table " + NoteDAO.TABLE_NOTE + " ADD COLUMN " + NoteDAO.KEY_NOTE_HAS_COORDINATES + " integer;");
-			db.execSQL("alter table " + NoteDAO.TABLE_NOTE + " ADD COLUMN " + NoteDAO.KEY_NOTE_ADDRESS + " text;");
-*/
+
 		case 2:
 		// upgrades for version 2->3
+			Log.i("DBHelper", "Migrating from V2 to V3");
 
 		case 3:
 		// upgrades for version 3->4
+			Log.i("DBHelper", "Migrating from V2 to V4");
 		}
 		
 	}

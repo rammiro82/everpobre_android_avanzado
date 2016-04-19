@@ -2,7 +2,6 @@ package io.keepcoding.rgs.everpobre.model.db.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 
 import java.lang.ref.WeakReference;
 
@@ -15,21 +14,18 @@ public class NotebookDAO {
 	// Table field constants 
 	public static final String KEY_NOTEBOOK_ID = "_id";
 	public static final String KEY_NOTEBOOK_NAME = "name";
-	//public static final String KEY_NOTEBOOK_DESCRIPTION = "description";
 
 	public static final String SQL_CREATE_NOTEBOOK_TABLE =
 			"create table " + TABLE_NOTEBOOK
 					+ "( " + KEY_NOTEBOOK_ID
 					+ " integer primary key autoincrement, "
 					+ KEY_NOTEBOOK_NAME + " text not null"
-//					+ KEY_NOTEBOOK_DESCRIPTION + " text not null"
 					+ ");";
 
 
 	public static final String[] allColumns = {
 			KEY_NOTEBOOK_ID,
-			KEY_NOTEBOOK_NAME,
-//			KEY_NOTEBOOK_DESCRIPTION
+			KEY_NOTEBOOK_NAME
 	};
 	private static final long INVALID_ID_DELETE_ALL_RECORDS = 0;
 	private final String databaseName;
@@ -79,6 +75,7 @@ public class NotebookDAO {
 
 		DBHelper db = DBHelper.getInstance(this.databaseName, context.get());
 
+        // two diferents ways of doing the same.
 		//int numberOfRowsUpdated = db.getWritableDatabase().update(TABLE_NOTEBOOK, this.getContentValues(notebook), KEY_NOTEBOOK_ID + "=" + id, null);
 		int numberOfRowsUpdated = db.getWritableDatabase().update(TABLE_NOTEBOOK, this.getContentValues(notebook), KEY_NOTEBOOK_ID + "=?", new String[]{"" + id});
 
@@ -107,7 +104,6 @@ public class NotebookDAO {
 		ContentValues content = new ContentValues();
 
 		content.put(KEY_NOTEBOOK_NAME, notebook.getName());
-		//content.put(KEY_NOTEBOOK_DESCRIPTION, notebook.getDescription());
 
 		return content;
 	}
