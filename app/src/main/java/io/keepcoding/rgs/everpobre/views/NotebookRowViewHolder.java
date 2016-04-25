@@ -20,7 +20,7 @@ public class NotebookRowViewHolder extends RecyclerView.ViewHolder {
     public NotebookRowViewHolder(View rowNotebook) {
         super(rowNotebook);
 
-        ButterKnife.bind(rowNotebook);
+        ButterKnife.bind(this, rowNotebook);
     }
 
     public void setNotebookName (String name){

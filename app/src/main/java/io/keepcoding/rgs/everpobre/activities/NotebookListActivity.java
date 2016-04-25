@@ -24,7 +24,7 @@ public class NotebookListActivity extends AppCompatActivity {
             NotebooksFragment notebooksFragment = new NotebooksFragment();
 
             fm.beginTransaction()
-                    .add(R.id.activity_notebook_fragment_container, notebooksFragment, "")
+                    .add(R.id.activity_notebook_fragment_container, notebooksFragment)
                     .commit();
 
 
